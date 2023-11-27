@@ -3,6 +3,19 @@ package com.bridgelabz.max;
 /*@desc:generic class using data type T*/
 public class Max_Min<T extends Comparable> {
 	
+	
+   private T obj1;
+   private T obj2;
+   private T obj3;
+
+	Max_Min(T obj1,T obj2,T obj3){
+		this.obj1=obj1;
+		this.obj2=obj2;
+		this.obj3=obj3;
+	}
+	public T testMaximum() {
+		return findMax(obj1, obj2, obj3);
+	}
 	/*
 	 * @desc:compares three objects and gives the max out of the three
 	 * @param:T type
@@ -20,21 +33,20 @@ public class Max_Min<T extends Comparable> {
 	 * @return:none
 	 */
 	 public static void main(String[] args) {
-		 
-		   // Test Case 1: Max at 1st position
-	       Max_Min<String> finder1 = new Max_Min<>();
-	        String result1 = finder1.findMax("Apple", "Peach", "Banana");
+		// Test Case 1: Max at 1st position (String)
+	        Max_Min<String> stringMax_Min = new Max_Min<>("Apple", "Peach", "Banana");
+	        String result1 = stringMax_Min.testMaximum();
 	        System.out.println("Test Case 1 Result: " + result1);
-
-	        // Test Case 2: Max at 2nd position
-	       Max_Min<Float> finder2 = new Max_Min<>();
-	        Float result2 = finder2.findMax(12.3f, 24.3f, 1.8f);
+ 
+        // Test Case 2: Max at 2nd position (Float)
+	        Max_Min<Float> floatMax_Min = new Max_Min<>(1.1f, 8.6f, 6.2f);
+	        Float result2 = floatMax_Min.testMaximum();
 	        System.out.println("Test Case 2 Result: " + result2);
 
-	        // Test Case 3: Max at 3rd position
-	       Max_Min<Integer> finder3 = new Max_Min<>();
-	        Integer result3 = finder3.findMax(1, 2 ,3);
+	   // Test Case 3: Max at 3rd position (Integer)
+	        Max_Min<Integer> integerMax_Min = new Max_Min<>(4, 1, 7);
+	        Integer result3 = integerMax_Min.testMaximum();
 	        System.out.println("Test Case 3 Result: " + result3);
-	    }
+	 }
 
 }
